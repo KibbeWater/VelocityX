@@ -14,7 +14,7 @@ struct ContentView: View {
         HStack {
             ForEach(0..<digitCount(), id: \.self) { i in
                 Text(String(getSpeedDigit(digitIdx: i)))
-                    .font(.largeTitle)
+                    .font(.system(size: 128))
             }
         }
         .padding()

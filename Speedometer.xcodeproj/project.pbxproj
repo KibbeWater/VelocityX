@@ -11,6 +11,7 @@
 		BC4E6B042A451A8E0012A859 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E6B032A451A8E0012A859 /* ContentView.swift */; };
 		BC4E6B062A451A8F0012A859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4E6B052A451A8F0012A859 /* Assets.xcassets */; };
 		BC4E6B0A2A451A8F0012A859 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4E6B092A451A8F0012A859 /* Preview Assets.xcassets */; };
+		BC4E6B122A4525C90012A859 /* ISpeedTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E6B112A4525C90012A859 /* ISpeedTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		BC4E6B052A451A8F0012A859 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC4E6B072A451A8F0012A859 /* Speedometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Speedometer.entitlements; sourceTree = "<group>"; };
 		BC4E6B092A451A8F0012A859 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BC4E6B112A4525C90012A859 /* ISpeedTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISpeedTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		BC4E6B002A451A8E0012A859 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
+				BC4E6B102A45257D0012A859 /* LocationMgr */,
 				BC4E6B012A451A8E0012A859 /* SpeedometerApp.swift */,
 				BC4E6B032A451A8E0012A859 /* ContentView.swift */,
 				BC4E6B052A451A8F0012A859 /* Assets.xcassets */,
@@ -67,6 +70,14 @@
 				BC4E6B092A451A8F0012A859 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BC4E6B102A45257D0012A859 /* LocationMgr */ = {
+			isa = PBXGroup;
+			children = (
+				BC4E6B112A4525C90012A859 /* ISpeedTracker.swift */,
+			);
+			path = LocationMgr;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4E6B122A4525C90012A859 /* ISpeedTracker.swift in Sources */,
 				BC4E6B042A451A8E0012A859 /* ContentView.swift in Sources */,
 				BC4E6B022A451A8E0012A859 /* SpeedometerApp.swift in Sources */,
 			);
