@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC12172D2A45FC0A0032E9BF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC12172C2A45FC0A0032E9BF /* LocationManager.swift */; };
 		BC4E6B022A451A8E0012A859 /* SpeedometerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E6B012A451A8E0012A859 /* SpeedometerApp.swift */; };
 		BC4E6B042A451A8E0012A859 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E6B032A451A8E0012A859 /* ContentView.swift */; };
 		BC4E6B062A451A8F0012A859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4E6B052A451A8F0012A859 /* Assets.xcassets */; };
 		BC4E6B0A2A451A8F0012A859 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4E6B092A451A8F0012A859 /* Preview Assets.xcassets */; };
-		BC4E6B122A4525C90012A859 /* ISpeedTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E6B112A4525C90012A859 /* ISpeedTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC12172B2A45FA380032E9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BC12172C2A45FC0A0032E9BF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BC4E6AFE2A451A8E0012A859 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4E6B012A451A8E0012A859 /* SpeedometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerApp.swift; sourceTree = "<group>"; };
 		BC4E6B032A451A8E0012A859 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BC4E6B052A451A8F0012A859 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC4E6B072A451A8F0012A859 /* Speedometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Speedometer.entitlements; sourceTree = "<group>"; };
 		BC4E6B092A451A8F0012A859 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BC4E6B112A4525C90012A859 /* ISpeedTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISpeedTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		BC4E6B002A451A8E0012A859 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
+				BC12172B2A45FA380032E9BF /* Info.plist */,
 				BC4E6B102A45257D0012A859 /* LocationMgr */,
 				BC4E6B012A451A8E0012A859 /* SpeedometerApp.swift */,
 				BC4E6B032A451A8E0012A859 /* ContentView.swift */,
@@ -75,7 +77,7 @@
 		BC4E6B102A45257D0012A859 /* LocationMgr */ = {
 			isa = PBXGroup;
 			children = (
-				BC4E6B112A4525C90012A859 /* ISpeedTracker.swift */,
+				BC12172C2A45FC0A0032E9BF /* LocationManager.swift */,
 			);
 			path = LocationMgr;
 			sourceTree = "<group>";
@@ -150,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC4E6B122A4525C90012A859 /* ISpeedTracker.swift in Sources */,
+				BC12172D2A45FC0A0032E9BF /* LocationManager.swift in Sources */,
 				BC4E6B042A451A8E0012A859 /* ContentView.swift in Sources */,
 				BC4E6B022A451A8E0012A859 /* SpeedometerApp.swift in Sources */,
 			);
@@ -281,6 +283,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Speedometer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VelocityX;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -289,8 +294,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -299,7 +304,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kibbewater.Speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,6 +326,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Speedometer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VelocityX;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -327,8 +337,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -337,7 +347,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kibbewater.Speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
