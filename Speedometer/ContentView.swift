@@ -10,38 +10,79 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject private var speedManager = LocationManager.shared
     
-    @State private var speed: Int = 0
-    @State private var previousSpeed: Int = 0
+    @State private var speed: Double = 0
+    
+    private var graphResolution = 10 // Will capture {graphResolution} snaphots over {graphSeconds} seconds
+    private var graphSeconds = 4
+    @State private var graphHistory: [Double] = [0]
+    @State private var graphCursor: Int = 0
+    
+    @State private var viewDidLoad = false
+    @State var timer: Timer?
     
     var body: some View {
-        GeometryReader { geo in
-            Text(String(format: "%02d", speed))
-                .font(.system(size: 128))
-                .foregroundColor(.black)
-                .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
+        VStack {
+            GeometryReader { geo in
+                Text(String(format: "%02d", getFlooredSpeed()))
+                    .font(.system(size: fontSize(for: geo.size)))
+                    .animation(.easeInOut, value: getFlooredSpeed())
+                    .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
+            }
+            Spacer()
+            SpeedGraph(history: $graphHistory, cursorPosition: $graphCursor)
+                .padding()
         }
         .onChange(of: speedManager.speed) { newSpeed in
             withAnimation {
-                previousSpeed = speed
                 speed = newSpeed
+            }
+        }
+        .onAppear {
+            if !viewDidLoad {
+                //var speedPoints = [SpeedPoint]()
+                //for idx in 0..<totalGraphEntries() {
+                //    let point = SpeedPoint(value: 0.0, idx: idx)
+                //    speedPoints.append(point)
+                //}
+                //graphHistory = Array(repeating: 0, count: totalGraphEntries())
+                
+                self.timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(graphDelay()), repeats: true, block: { _ in
+                    captureSpeedSnapshot()
+                })
+                viewDidLoad = true
             }
         }
     }
     
-    func getSpeedDigit(speed: Int32, digitIdx: Int32) -> Int32 {
-        return Int32(Double(speed) / pow(Double(10), Double((digitCount(speed: speed) - 1) - digitIdx))) % 10
-    }
-    
-    func digitCount(speed: Int32) -> Int32 {
-        if speed <= 0 {
-            return 1
-        } else {
-            return Int32(log10(Double(speed))) + 1
-        }
-    }
-    
     private func fontSize(for size: CGSize) -> CGFloat {
-        min(size.width, size.height) * 0.9
+        min(size.width, size.height) * 0.45
+    }
+    
+    func graphDelay() -> Double {
+        return 1.0 / Double(graphResolution)
+    }
+    
+    func getFlooredSpeed() -> Int {
+        return Int(floor(speed))
+    }
+    
+    func totalGraphEntries() -> Int {
+        return graphResolution * graphSeconds
+    }
+    
+    func incrementCursor() {
+        graphCursor = graphCursor + 1 >= totalGraphEntries() ? 0 : graphCursor + 1
+    }
+    
+    func captureSpeedSnapshot() {
+        //graphHistory[graphCursor] = speed//SpeedPoint(value: speed, idx: graphCursor)
+        graphHistory.append(speed)
+        incrementCursor()
+        
+        if graphHistory.count > totalGraphEntries() {
+            let removalCount = graphHistory.count - totalGraphEntries()
+            graphHistory.removeFirst(removalCount)
+        }
     }
 }
 
