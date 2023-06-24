@@ -38,16 +38,12 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         return isPermissionGranted && isGPSEnabled
     }
     
-    func convertToKilometersPerHour(speed: Double) -> Double {
-        return speed * 3.6
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {
             return
         }
         
-        speed = convertToKilometersPerHour(speed: location.speed)
+        speed = location.speed
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

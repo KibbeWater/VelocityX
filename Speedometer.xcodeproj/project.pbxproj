@@ -13,10 +13,13 @@
 		BC4E6B062A451A8F0012A859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4E6B052A451A8F0012A859 /* Assets.xcassets */; };
 		BC4E6B0A2A451A8F0012A859 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4E6B092A451A8F0012A859 /* Preview Assets.xcassets */; };
 		BCE077C92A472CAB006A6123 /* SpeedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE077C82A472CAB006A6123 /* SpeedGraph.swift */; };
+		BCE457C02A479DBF00C2B37D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE457BF2A479DBF00C2B37D /* Settings.swift */; };
+		BCE457C22A47A27A00C2B37D /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE457C12A47A27A00C2B37D /* Root.swift */; };
+		BCE457C42A47A4C900C2B37D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE457C32A47A4C900C2B37D /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC12172B2A45FA380032E9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BC12172B2A45FA380032E9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC12172C2A45FC0A0032E9BF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BC4E6AFE2A451A8E0012A859 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4E6B012A451A8E0012A859 /* SpeedometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerApp.swift; sourceTree = "<group>"; };
@@ -25,6 +28,9 @@
 		BC4E6B072A451A8F0012A859 /* Speedometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Speedometer.entitlements; sourceTree = "<group>"; };
 		BC4E6B092A451A8F0012A859 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCE077C82A472CAB006A6123 /* SpeedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGraph.swift; sourceTree = "<group>"; };
+		BCE457BF2A479DBF00C2B37D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		BCE457C12A47A27A00C2B37D /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		BCE457C32A47A4C900C2B37D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +63,15 @@
 		BC4E6B002A451A8E0012A859 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				BCE077C72A472C93006A6123 /* Components */,
-				BC12172B2A45FA380032E9BF /* Info.plist */,
 				BC4E6B102A45257D0012A859 /* LocationMgr */,
+				BCE077C72A472C93006A6123 /* Components */,
+				BCE457BE2A479D9A00C2B37D /* Views */,
+				BC12172B2A45FA380032E9BF /* Info.plist */,
 				BC4E6B012A451A8E0012A859 /* SpeedometerApp.swift */,
-				BC4E6B032A451A8E0012A859 /* ContentView.swift */,
 				BC4E6B052A451A8F0012A859 /* Assets.xcassets */,
 				BC4E6B072A451A8F0012A859 /* Speedometer.entitlements */,
 				BC4E6B082A451A8F0012A859 /* Preview Content */,
+				BCE457C32A47A4C900C2B37D /* Utils.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
@@ -91,6 +98,16 @@
 				BCE077C82A472CAB006A6123 /* SpeedGraph.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		BCE457BE2A479D9A00C2B37D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC4E6B032A451A8E0012A859 /* ContentView.swift */,
+				BCE457BF2A479DBF00C2B37D /* Settings.swift */,
+				BCE457C12A47A27A00C2B37D /* Root.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +183,10 @@
 				BC12172D2A45FC0A0032E9BF /* LocationManager.swift in Sources */,
 				BC4E6B042A451A8E0012A859 /* ContentView.swift in Sources */,
 				BCE077C92A472CAB006A6123 /* SpeedGraph.swift in Sources */,
+				BCE457C42A47A4C900C2B37D /* Utils.swift in Sources */,
 				BC4E6B022A451A8E0012A859 /* SpeedometerApp.swift in Sources */,
+				BCE457C02A479DBF00C2B37D /* Settings.swift in Sources */,
+				BCE457C22A47A27A00C2B37D /* Root.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +318,7 @@
 				INFOPLIST_FILE = Speedometer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VelocityX;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Determine your devices accurate speed";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -341,6 +362,7 @@
 				INFOPLIST_FILE = Speedometer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VelocityX;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Determine your devices accurate speed";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

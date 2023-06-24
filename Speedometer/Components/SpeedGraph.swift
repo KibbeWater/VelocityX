@@ -23,13 +23,14 @@ struct SpeedPoint: Identifiable {
 struct SpeedGraph: View {
     @Binding var history: [Double]
     @Binding var cursorPosition: Int
+    var speedConversion: SpeedConversions = .kmph
     
     var body: some View {
         Chart {
             ForEach(Array(history.enumerated()), id: \.offset) { index, value in
                 LineMark(
                     x: .value("Time", index),
-                    y: .value("Speed", value)
+                    y: .value(speedConversion.rawValue, Utils.shared.ConvertSpeed(from: .mps, to: speedConversion, value: value))
                 )
                 .interpolationMethod(.catmullRom)
                 .lineStyle(StrokeStyle(lineWidth: 4, lineCap: .round))
@@ -38,6 +39,25 @@ struct SpeedGraph: View {
             //    x: .value("Time", cursorPosition == 0 ? 0 : cursorPosition - 1),
             //    y: .value("Speed", cursorPosition == 0 ? history[history.count-1] : history[cursorPosition-1])
             //)
+        }
+        .chartYAxis {
+            AxisMarks {
+                let value = $0.as(Double.self)!
+                AxisValueLabel(String(format: "%.0f \(speedConversion.rawValue)", value))
+            }
+        }
+    }
+    
+    func speedConversionToUnit() -> Unit {
+        switch speedConversion {
+        case .kmph:
+            return UnitSpeed.kilometersPerHour
+        case .mph:
+            return UnitSpeed.milesPerHour
+        case .mps:
+            return UnitSpeed.metersPerSecond
+        case .kn:
+            return UnitSpeed.knots
         }
     }
 }

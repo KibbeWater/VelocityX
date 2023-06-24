@@ -12,7 +12,7 @@ struct ContentView: View {
     
     @State private var speed: Double = 0
     
-    private var graphResolution = 10 // Will capture {graphResolution} snaphots over {graphSeconds} seconds
+    private var graphResolution = 5 // Will capture {graphResolution} snaphots over {graphSeconds} seconds
     private var graphSeconds = 4
     @State private var graphHistory: [Double] = [0]
     @State private var graphCursor: Int = 0
@@ -20,16 +20,27 @@ struct ContentView: View {
     @State private var viewDidLoad = false
     @State var timer: Timer?
     
+    @AppStorage("speedConversionCounter")
+    private var speedConversionCounter: SpeedConversions = .kmph
+    
+    @AppStorage("speedConversionGraph")
+    private var speedConversionGraph: SpeedConversions = .kmph
+    
     var body: some View {
         VStack {
             GeometryReader { geo in
-                Text(String(format: "%02d", getFlooredSpeed()))
-                    .font(.system(size: fontSize(for: geo.size)))
-                    .animation(.easeInOut, value: getFlooredSpeed())
-                    .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
+                VStack {
+                    Text(speedConversionCounter.rawValue)
+                        .font(.title)
+                    Text(String(format: "%02d", getFlooredSpeed()))
+                        .font(.system(size: fontSize(for: geo.size)))
+                        .animation(.easeInOut, value: getFlooredSpeed())
+                    
+                }
+                .frame(width: geo.size.width, height: geo.size.height)
             }
             Spacer()
-            SpeedGraph(history: $graphHistory, cursorPosition: $graphCursor)
+            SpeedGraph(history: $graphHistory, cursorPosition: $graphCursor, speedConversion: speedConversionGraph)
                 .padding()
         }
         .onChange(of: speedManager.speed) { newSpeed in
@@ -52,6 +63,16 @@ struct ContentView: View {
                 viewDidLoad = true
             }
         }
+        .overlay(alignment: .topTrailing) {
+            NavigationLink {
+                Settings()
+            } label: {
+                Image(systemName: "gear")
+                    .imageScale(.large)
+                    .foregroundColor(.black)
+            }
+            .padding(.trailing)
+        }
     }
     
     private func fontSize(for size: CGSize) -> CGFloat {
@@ -63,7 +84,7 @@ struct ContentView: View {
     }
     
     func getFlooredSpeed() -> Int {
-        return Int(floor(speed))
+        return Int(floor(Utils.shared.ConvertSpeed(from: .mps, to: speedConversionCounter, value: speed)))
     }
     
     func totalGraphEntries() -> Int {
