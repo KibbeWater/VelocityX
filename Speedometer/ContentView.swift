@@ -10,24 +10,22 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject private var speedManager = LocationManager.shared
     
+    @State private var speed: Int = 0
+    @State private var previousSpeed: Int = 0
+    
     var body: some View {
-        HStack {
-            Text(String(getSpeedDigit(speed: speedManager.speed, digitIdx: 0)))
+        GeometryReader { geo in
+            Text(String(format: "%02d", speed))
                 .font(.system(size: 128))
-                .transition(.slide.combined(with: .opacity))
-            Text(String(getSpeedDigit(speed: speedManager.speed, digitIdx: 1)))
-                .font(.system(size: 128))
-                .transition(.slide.combined(with: .opacity))
-            if digitCount(speed: speedManager.speed) > 2 {
-                ForEach(2..<digitCount(speed: speedManager.speed), id: \.self) { i in
-                    Text(String(getSpeedDigit(speed: speedManager.speed, digitIdx: i)))
-                        .font(.system(size: 128))
-                        .transition(.slide.combined(with: .opacity))
-                    
-                }
+                .foregroundColor(.black)
+                .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
+        }
+        .onChange(of: speedManager.speed) { newSpeed in
+            withAnimation {
+                previousSpeed = speed
+                speed = newSpeed
             }
         }
-        .padding()
     }
     
     func getSpeedDigit(speed: Int32, digitIdx: Int32) -> Int32 {
@@ -40,6 +38,10 @@ struct ContentView: View {
         } else {
             return Int32(log10(Double(speed))) + 1
         }
+    }
+    
+    private func fontSize(for size: CGSize) -> CGFloat {
+        min(size.width, size.height) * 0.9
     }
 }
 

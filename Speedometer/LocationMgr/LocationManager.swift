@@ -12,7 +12,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     static var shared: LocationManager = LocationManager()
     private let locationManager = CLLocationManager()
     
-    @Published var speed: Int32 = 0
+    @Published var speed: Int = 0
     @Published var authorizationStatus: CLAuthorizationStatus = .notDetermined
     
     private var isPermissionGranted: Bool {
@@ -47,8 +47,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
             return
         }
         
-        print("Current Speed: \(Int32(convertToKilometersPerHour(speed: location.speed)))")
-        speed = Int32(convertToKilometersPerHour(speed: location.speed))
+        speed = Int(convertToKilometersPerHour(speed: location.speed))
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
