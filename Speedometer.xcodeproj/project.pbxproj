@@ -19,6 +19,8 @@
 		BCB62AA62A48695D003786BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEC7E542A4864310062DA35 /* ContentView.swift */; };
 		BCB62AA72A48695D003786BF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEC7E662A4864B10062DA35 /* Settings.swift */; };
 		BCB62AA92A486969003786BF /* SpeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = BCB62AA82A486969003786BF /* SpeedKit */; };
+		BCB62AAB2A487540003786BF /* SpeedGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB62AAA2A48753F003786BF /* SpeedGauge.swift */; };
+		BCB62AAD2A488288003786BF /* SpeedCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB62AAC2A488288003786BF /* SpeedCounter.swift */; };
 		BCE077C92A472CAB006A6123 /* SpeedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE077C82A472CAB006A6123 /* SpeedGraph.swift */; };
 		BCE457C02A479DBF00C2B37D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE457BF2A479DBF00C2B37D /* Settings.swift */; };
 		BCE457C22A47A27A00C2B37D /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE457C12A47A27A00C2B37D /* Root.swift */; };
@@ -61,6 +63,8 @@
 		BCB62A972A486912003786BF /* WatchometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchometerApp.swift; sourceTree = "<group>"; };
 		BCB62A9B2A486913003786BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCB62A9E2A486913003786BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCB62AAA2A48753F003786BF /* SpeedGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGauge.swift; sourceTree = "<group>"; };
+		BCB62AAC2A488288003786BF /* SpeedCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedCounter.swift; sourceTree = "<group>"; };
 		BCE077C82A472CAB006A6123 /* SpeedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGraph.swift; sourceTree = "<group>"; };
 		BCE457BF2A479DBF00C2B37D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BCE457C12A47A27A00C2B37D /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 		BCE077C72A472C93006A6123 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BCB62AAA2A48753F003786BF /* SpeedGauge.swift */,
+				BCB62AAC2A488288003786BF /* SpeedCounter.swift */,
 				BCE077C82A472CAB006A6123 /* SpeedGraph.swift */,
 			);
 			path = Components;
@@ -294,6 +300,8 @@
 				BC4E6B042A451A8E0012A859 /* ContentView.swift in Sources */,
 				BCE077C92A472CAB006A6123 /* SpeedGraph.swift in Sources */,
 				BC4E6B022A451A8E0012A859 /* SpeedometerApp.swift in Sources */,
+				BCB62AAB2A487540003786BF /* SpeedGauge.swift in Sources */,
+				BCB62AAD2A488288003786BF /* SpeedCounter.swift in Sources */,
 				BCE457C02A479DBF00C2B37D /* Settings.swift in Sources */,
 				BCE457C22A47A27A00C2B37D /* Root.swift in Sources */,
 			);

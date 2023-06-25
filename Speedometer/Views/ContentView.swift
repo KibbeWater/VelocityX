@@ -27,22 +27,20 @@ struct ContentView: View {
     @AppStorage("speedConversionGraph")
     private var speedConversionGraph: SpeedConversions = .kmph
     
+    @AppStorage("speedConversionGauge")
+    private var speedConversionGauge: SpeedConversions = .kmph
+    
+    @AppStorage("primaryComponent")
+    private var primaryComponent: ComponentType = .gauge
+    
+    @AppStorage("secondaryComponent")
+    private var secondaryComponent: ComponentType = .graph
+    
     var body: some View {
         VStack {
-            GeometryReader { geo in
-                VStack {
-                    Text(speedConversionCounter.rawValue)
-                        .font(.title)
-                    Text(String(format: "%02d", getFlooredSpeed()))
-                        .font(.system(size: fontSize(for: geo.size)))
-                        .animation(.easeInOut, value: getFlooredSpeed())
-                    
-                }
-                .frame(width: geo.size.width, height: geo.size.height)
-            }
+            getComponent(type: primaryComponent)
             Spacer()
-            SpeedGraph(history: $graphHistory, cursorPosition: $graphCursor, speedConversion: speedConversionGraph)
-                .padding()
+            getComponent(type: secondaryComponent)
         }
         .onChange(of: speedManager.speed) { newSpeed in
             withAnimation {
@@ -71,6 +69,19 @@ struct ContentView: View {
                     .foregroundColor(.black)
             }
             .padding(.trailing)
+        }
+    }
+    
+    @ViewBuilder
+    func getComponent(type: ComponentType) -> some View {
+        switch type {
+        case .gauge:
+            SpeedGauge(speed: $speed, speedConversion: speedConversionGauge)
+        case .counter:
+            SpeedCounter(speed: $speed, speedConversion: speedConversionCounter)
+        case .graph:
+            SpeedGraph(history: $graphHistory, cursorPosition: $graphCursor, speedConversion: speedConversionGraph)
+                .padding()
         }
     }
     
