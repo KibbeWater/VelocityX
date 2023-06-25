@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Charts
+import SpeedKit
 
 struct SpeedPoint: Identifiable {
     let id: UUID

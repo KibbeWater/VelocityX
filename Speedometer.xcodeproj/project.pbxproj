@@ -7,30 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC12172D2A45FC0A0032E9BF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC12172C2A45FC0A0032E9BF /* LocationManager.swift */; };
 		BC4E6B022A451A8E0012A859 /* SpeedometerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E6B012A451A8E0012A859 /* SpeedometerApp.swift */; };
 		BC4E6B042A451A8E0012A859 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E6B032A451A8E0012A859 /* ContentView.swift */; };
 		BC4E6B062A451A8F0012A859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4E6B052A451A8F0012A859 /* Assets.xcassets */; };
 		BC4E6B0A2A451A8F0012A859 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4E6B092A451A8F0012A859 /* Preview Assets.xcassets */; };
+		BC9F93C02A4851D900FCC8B5 /* SpeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = BC9F93BF2A4851D900FCC8B5 /* SpeedKit */; };
+		BCB62A982A486912003786BF /* WatchometerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB62A972A486912003786BF /* WatchometerApp.swift */; };
+		BCB62A9C2A486913003786BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB62A9B2A486913003786BF /* Assets.xcassets */; };
+		BCB62A9F2A486913003786BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB62A9E2A486913003786BF /* Preview Assets.xcassets */; };
+		BCB62AA22A486913003786BF /* Watchometer Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BCB62A952A486912003786BF /* Watchometer Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BCB62AA62A48695D003786BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEC7E542A4864310062DA35 /* ContentView.swift */; };
+		BCB62AA72A48695D003786BF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEC7E662A4864B10062DA35 /* Settings.swift */; };
+		BCB62AA92A486969003786BF /* SpeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = BCB62AA82A486969003786BF /* SpeedKit */; };
 		BCE077C92A472CAB006A6123 /* SpeedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE077C82A472CAB006A6123 /* SpeedGraph.swift */; };
 		BCE457C02A479DBF00C2B37D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE457BF2A479DBF00C2B37D /* Settings.swift */; };
 		BCE457C22A47A27A00C2B37D /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE457C12A47A27A00C2B37D /* Root.swift */; };
-		BCE457C42A47A4C900C2B37D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE457C32A47A4C900C2B37D /* Utils.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCB62AA02A486913003786BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC4E6AF62A451A8E0012A859 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCB62A942A486912003786BF;
+			remoteInfo = "Watchometer Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BCEC7E7D2A4868870062DA35 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				BCB62AA22A486913003786BF /* Watchometer Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BC12172B2A45FA380032E9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC12172C2A45FC0A0032E9BF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BC35E7EC2A484D4600D1B2B6 /* SpeedKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SpeedKit; path = ../SpeedKit; sourceTree = "<group>"; };
 		BC4E6AFE2A451A8E0012A859 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4E6B012A451A8E0012A859 /* SpeedometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerApp.swift; sourceTree = "<group>"; };
 		BC4E6B032A451A8E0012A859 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BC4E6B052A451A8F0012A859 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC4E6B072A451A8F0012A859 /* Speedometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Speedometer.entitlements; sourceTree = "<group>"; };
 		BC4E6B092A451A8F0012A859 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCB62A952A486912003786BF /* Watchometer Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watchometer Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCB62A972A486912003786BF /* WatchometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchometerApp.swift; sourceTree = "<group>"; };
+		BCB62A9B2A486913003786BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCB62A9E2A486913003786BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCE077C82A472CAB006A6123 /* SpeedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGraph.swift; sourceTree = "<group>"; };
 		BCE457BF2A479DBF00C2B37D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BCE457C12A47A27A00C2B37D /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
-		BCE457C32A47A4C900C2B37D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BCEC7E542A4864310062DA35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BCEC7E662A4864B10062DA35 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +73,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9F93C02A4851D900FCC8B5 /* SpeedKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCB62A922A486912003786BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCB62AA92A486969003786BF /* SpeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,8 +91,11 @@
 		BC4E6AF52A451A8E0012A859 = {
 			isa = PBXGroup;
 			children = (
+				BC35E7EC2A484D4600D1B2B6 /* SpeedKit */,
 				BC4E6B002A451A8E0012A859 /* Speedometer */,
+				BCB62A962A486912003786BF /* Watchometer Watch App */,
 				BC4E6AFF2A451A8E0012A859 /* Products */,
+				BC9F93BE2A4851D900FCC8B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				BC4E6AFE2A451A8E0012A859 /* Speedometer.app */,
+				BCB62A952A486912003786BF /* Watchometer Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,7 +111,6 @@
 		BC4E6B002A451A8E0012A859 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				BC4E6B102A45257D0012A859 /* LocationMgr */,
 				BCE077C72A472C93006A6123 /* Components */,
 				BCE457BE2A479D9A00C2B37D /* Views */,
 				BC12172B2A45FA380032E9BF /* Info.plist */,
@@ -71,7 +118,6 @@
 				BC4E6B052A451A8F0012A859 /* Assets.xcassets */,
 				BC4E6B072A451A8F0012A859 /* Speedometer.entitlements */,
 				BC4E6B082A451A8F0012A859 /* Preview Content */,
-				BCE457C32A47A4C900C2B37D /* Utils.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
@@ -84,12 +130,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BC4E6B102A45257D0012A859 /* LocationMgr */ = {
+		BC9F93BE2A4851D900FCC8B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC12172C2A45FC0A0032E9BF /* LocationManager.swift */,
 			);
-			path = LocationMgr;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCB62A962A486912003786BF /* Watchometer Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				BCB62A972A486912003786BF /* WatchometerApp.swift */,
+				BCEC7E652A4864970062DA35 /* Views */,
+				BCB62A9B2A486913003786BF /* Assets.xcassets */,
+				BCB62A9D2A486913003786BF /* Preview Content */,
+			);
+			path = "Watchometer Watch App";
+			sourceTree = "<group>";
+		};
+		BCB62A9D2A486913003786BF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BCB62A9E2A486913003786BF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		BCE077C72A472C93006A6123 /* Components */ = {
@@ -110,6 +174,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BCEC7E652A4864970062DA35 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCEC7E542A4864310062DA35 /* ContentView.swift */,
+				BCEC7E662A4864B10062DA35 /* Settings.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,17 +190,42 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC4E6B0D2A451A8F0012A859 /* Build configuration list for PBXNativeTarget "Speedometer" */;
 			buildPhases = (
-				BC4E6AFA2A451A8E0012A859 /* Sources */,
 				BC4E6AFB2A451A8E0012A859 /* Frameworks */,
+				BC4E6AFA2A451A8E0012A859 /* Sources */,
 				BC4E6AFC2A451A8E0012A859 /* Resources */,
+				BCEC7E7D2A4868870062DA35 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCB62AA12A486913003786BF /* PBXTargetDependency */,
+			);
+			name = Speedometer;
+			packageProductDependencies = (
+				BC9F93BF2A4851D900FCC8B5 /* SpeedKit */,
+			);
+			productName = Speedometer;
+			productReference = BC4E6AFE2A451A8E0012A859 /* Speedometer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCB62A942A486912003786BF /* Watchometer Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCB62AA52A486913003786BF /* Build configuration list for PBXNativeTarget "Watchometer Watch App" */;
+			buildPhases = (
+				BCB62A912A486912003786BF /* Sources */,
+				BCB62A922A486912003786BF /* Frameworks */,
+				BCB62A932A486912003786BF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Speedometer;
-			productName = Speedometer;
-			productReference = BC4E6AFE2A451A8E0012A859 /* Speedometer.app */;
+			name = "Watchometer Watch App";
+			packageProductDependencies = (
+				BCB62AA82A486969003786BF /* SpeedKit */,
+			);
+			productName = "Watchometer Watch App";
+			productReference = BCB62A952A486912003786BF /* Watchometer Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,6 +239,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					BC4E6AFD2A451A8E0012A859 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					BCB62A942A486912003786BF = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
@@ -159,6 +260,7 @@
 			projectRoot = "";
 			targets = (
 				BC4E6AFD2A451A8E0012A859 /* Speedometer */,
+				BCB62A942A486912003786BF /* Watchometer Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -173,6 +275,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BCB62A932A486912003786BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCB62A9F2A486913003786BF /* Preview Assets.xcassets in Resources */,
+				BCB62A9C2A486913003786BF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -180,17 +291,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC12172D2A45FC0A0032E9BF /* LocationManager.swift in Sources */,
 				BC4E6B042A451A8E0012A859 /* ContentView.swift in Sources */,
 				BCE077C92A472CAB006A6123 /* SpeedGraph.swift in Sources */,
-				BCE457C42A47A4C900C2B37D /* Utils.swift in Sources */,
 				BC4E6B022A451A8E0012A859 /* SpeedometerApp.swift in Sources */,
 				BCE457C02A479DBF00C2B37D /* Settings.swift in Sources */,
 				BCE457C22A47A27A00C2B37D /* Root.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BCB62A912A486912003786BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCB62AA62A48695D003786BF /* ContentView.swift in Sources */,
+				BCB62AA72A48695D003786BF /* Settings.swift in Sources */,
+				BCB62A982A486912003786BF /* WatchometerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCB62AA12A486913003786BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCB62A942A486912003786BF /* Watchometer Watch App */;
+			targetProxy = BCB62AA02A486913003786BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BC4E6B0B2A451A8F0012A859 /* Debug */ = {
@@ -305,6 +432,7 @@
 		BC4E6B0E2A451A8F0012A859 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Speedometer/Speedometer.entitlements;
@@ -349,6 +477,7 @@
 		BC4E6B0F2A451A8F0012A859 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Speedometer/Speedometer.entitlements;
@@ -390,6 +519,67 @@
 			};
 			name = Release;
 		};
+		BCB62AA32A486913003786BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Watchometer Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 89625ZHN6X;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Watchometer;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kibbewater.Speedometer;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibbewater.Speedometer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		BCB62AA42A486913003786BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Watchometer Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 89625ZHN6X;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Watchometer;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kibbewater.Speedometer;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibbewater.Speedometer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -411,7 +601,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		BCB62AA52A486913003786BF /* Build configuration list for PBXNativeTarget "Watchometer Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCB62AA32A486913003786BF /* Debug */,
+				BCB62AA42A486913003786BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BC9F93BF2A4851D900FCC8B5 /* SpeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpeedKit;
+		};
+		BCB62AA82A486969003786BF /* SpeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpeedKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BC4E6AF62A451A8E0012A859 /* Project object */;
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SpeedKit
 
 struct ContentView: View {
     @ObservedObject private var speedManager = LocationManager.shared
@@ -64,9 +65,7 @@ struct ContentView: View {
             }
         }
         .overlay(alignment: .topTrailing) {
-            NavigationLink {
-                Settings()
-            } label: {
+            NavigationLink(destination: Settings()) {
                 Image(systemName: "gear")
                     .imageScale(.large)
                     .foregroundColor(.black)

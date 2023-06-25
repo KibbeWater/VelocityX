@@ -1,8 +1,8 @@
 //
 //  Settings.swift
-//  Speedometer
+//  Watchometer Watch App
 //
-//  Created by user242911 on 6/24/23.
+//  Created by user242911 on 6/25/23.
 //
 
 import SwiftUI
@@ -24,16 +24,7 @@ struct Settings: View {
                             Text($0.rawValue)
                         }
                     }
-                    .pickerStyle(.menu)
-                }
-                
-                Section(header: Text("Speed Graph")) {
-                    Picker("Display Unit", selection: $speedConversionGraph) {
-                        ForEach(SpeedConversions.allCases, id: \.self) {
-                            Text($0.rawValue)
-                        }
-                    }
-                    .pickerStyle(.menu)
+                    .pickerStyle(.automatic)
                 }
             }
             .formStyle(.grouped)
