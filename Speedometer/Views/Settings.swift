@@ -13,20 +13,35 @@ struct Settings: View {
     private var speedConversionCounter: SpeedConversions = .kmph
     
     @AppStorage("speedConversionGraph")
-    private var speedConversionGraph: SpeedConversions = .kmph
+    private var speedConversionGraph: SpeedConversions = .mps
     
     @AppStorage("speedConversionGauge")
     private var speedConversionGauge: SpeedConversions = .kmph
     
     @AppStorage("primaryComponent")
-    private var primaryComponent: ComponentType = .gauge
+    private var primaryComponent: ComponentType = .counter
     
     @AppStorage("secondaryComponent")
     private var secondaryComponent: ComponentType = .graph
     
+    @AppStorage("speedRounding")
+    private var speedRounding: RoundingType = .floor
+    
+    @AppStorage("speedDecimalsCounter")
+    private var speedDecimalsCounter: Int = 1
+    
     var body: some View {
         NavigationView {
             Form {
+                Section(header: Text("Speed Display Options")) {
+                    Picker("Rounding Type", selection: $speedRounding) {
+                        ForEach(RoundingType.allCases, id: \.self) {
+                            Text($0.rawValue)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                }
+                
                 Section(header: Text("Components")) {
                     Picker("Primary Component", selection: $primaryComponent) {
                         ForEach(ComponentType.allCases, id: \.self) {
@@ -50,6 +65,10 @@ struct Settings: View {
                         }
                     }
                     .pickerStyle(.menu)
+                    
+                    Stepper(value: $speedDecimalsCounter, in: 0...5, step: 1) {
+                        Text("Decimals: x\(speedDecimalsCounter <= 0 ? "" : ".\(String(repeating: "0", count: speedDecimalsCounter-1))1")")
+                    }
                 }
                 
                 Section(header: Text("Speed Graph")) {

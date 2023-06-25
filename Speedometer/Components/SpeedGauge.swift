@@ -126,7 +126,7 @@ struct SpeedGauge: View {
     }
     
     func getFlooredSpeed() -> Int {
-        return Int(floor(Utils.shared.ConvertSpeed(from: .mps, to: speedConversion, value: speed)))
+        return Int(Utils.shared.RoundSpeed(speed: Utils.shared.ConvertSpeed(from: .mps, to: speedConversion, value: speed)))
     }
     
     private func fontSize(for size: CGSize) -> CGFloat {
