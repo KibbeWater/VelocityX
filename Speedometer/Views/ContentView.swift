@@ -66,7 +66,7 @@ struct ContentView: View {
             NavigationLink(destination: Settings()) {
                 Image(systemName: "gear")
                     .imageScale(.large)
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
             }
             .padding(.trailing)
         }
