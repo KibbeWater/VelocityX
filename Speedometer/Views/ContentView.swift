@@ -25,13 +25,13 @@ struct ContentView: View {
     private var speedConversionCounter: SpeedConversions = .kmph
     
     @AppStorage("speedConversionGraph")
-    private var speedConversionGraph: SpeedConversions = .kmph
+    private var speedConversionGraph: SpeedConversions = .mps
     
     @AppStorage("speedConversionGauge")
     private var speedConversionGauge: SpeedConversions = .kmph
     
     @AppStorage("primaryComponent")
-    private var primaryComponent: ComponentType = .gauge
+    private var primaryComponent: ComponentType = .counter
     
     @AppStorage("secondaryComponent")
     private var secondaryComponent: ComponentType = .graph
