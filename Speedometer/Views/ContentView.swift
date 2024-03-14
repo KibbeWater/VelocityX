@@ -13,8 +13,8 @@ struct ContentView: View {
     
     @State private var speed: Double = 0
     
-    private var graphResolution = 5 // Will capture {graphResolution} snaphots over {graphSeconds} seconds
-    private var graphSeconds = 4
+    private var graphResolution = 2 // Will capture {graphResolution} snaphots over {graphSeconds} seconds
+    private var graphSeconds = 1
     @State private var graphHistory: [Double] = [0]
     @State private var graphCursor: Int = 0
     
@@ -44,7 +44,7 @@ struct ContentView: View {
         }
         .onChange(of: speedManager.speed) { newSpeed in
             withAnimation {
-                speed = newSpeed
+                speed = max(newSpeed, 0)
             }
         }
         .onAppear {

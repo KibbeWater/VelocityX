@@ -30,6 +30,9 @@ struct Settings: View {
     @AppStorage("speedDecimalsCounter")
     private var speedDecimalsCounter: Int = 1
     
+    @AppStorage("counterPadding")
+    private var counterPadding: Bool = false
+    
     var body: some View {
         NavigationView {
             Form {
@@ -68,6 +71,10 @@ struct Settings: View {
                     
                     Stepper(value: $speedDecimalsCounter, in: 0...5, step: 1) {
                         Text("Decimals: x\(speedDecimalsCounter <= 0 ? "" : ".\(String(repeating: "0", count: speedDecimalsCounter-1))1")")
+                    }
+                    
+                    Toggle(isOn: $counterPadding) {
+                        Text("Counter always 2 digits")
                     }
                 }
                 

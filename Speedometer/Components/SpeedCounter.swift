@@ -15,12 +15,15 @@ struct SpeedCounter: View {
     @Binding var speed: Double
     var speedConversion: SpeedConversions = .kmph
     
+    @AppStorage("counterPadding")
+    private var counterPadding: Bool = false
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
                 Text(speedConversion.rawValue)
                     .font(.title)
-                Text(hasDecimals(getFlooredSpeed()) ? String(getFlooredSpeed()) : String(format: "%02.0f", getFlooredSpeed()))
+                Text(hasDecimals(getFlooredSpeed()) || !counterPadding ? String(getFlooredSpeed()) : String(format: "%02.0f", getFlooredSpeed()))
                     .font(.system(size: fontSize(for: geo.size)))
                     .animation(.easeInOut, value: getFlooredSpeed())
                 
